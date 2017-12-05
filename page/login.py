@@ -9,10 +9,10 @@ import time
 
 class Login():
 
-    username_id = 'au.geekseat.com.hub3candroid:id/textUsername'
-    password_id = 'au.geekseat.com.hub3candroid:id/textPassword'
-    sign_in_button = 'au.geekseat.com.hub3candroid:id/buttonLogin'
-    register_forgot_password = "au.geekseat.com.hub3candroid:id/textForgotPassword"
+    username_id = 'com.hub.mentifi:id/input_email'
+    password_id = 'com.hub.mentifi:id/input_password'
+    sign_in_button = 'com.hub.mentifi:id/btn_login'
+    register_forgot_password = "com.hub.mentifi:id/text_forgot"
 
 
     def __init__(self, driver):
@@ -78,7 +78,7 @@ class Login():
         except TimeoutException:
             print("element not ready")
 
-        forgot_pass =  self.driver.find_element_by_id('au.geekseat.com.hub3candroid:id/textForgotPassword')
+        forgot_pass =  self.driver.find_element_by_id('com.hub.mentifi:id/text_forgot')
         x = forgot_pass.location['x']
         y = forgot_pass.location['y']
         # height = forgot_pass.size['height']
