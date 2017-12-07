@@ -8,21 +8,22 @@ import pytest
 
 class UserProfile():
 
-
-    logout = "au.geekseat.com.hub3candroid:id/buttonLogout"
-    switch_account = "au.geekseat.com.hub3candroid:id/buttonSwitch"
-    edit = "au.geekseat.com.hub3candroid:id/action_edit"
-    back = "//*[@contentDescription='Navigate up']"
+    profile = "//*[@class='android.support.v7.app.ActionBar$Tab']"
+    mailing_address = "//*[@class='android.support.v7.app.ActionBar$Tab']"
+    education = "//*[@class='android.support.v7.app.ActionBar$Tab']"
+    employment = "//*[@class='android.support.v7.app.ActionBar$Tab']"
+    logout = ""
 
     def __init__(self, driver):
         self.driver = driver
 
     def verified_all_element(self):
         try:
-            WebDriverWait(self.driver, 30).until(ec.presence_of_element_located((By.ID, self.logout)))
-            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.switch_account)))
-            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.edit)))
-            print("Dadshboard page is compleately loaded")
+            WebDriverWait(self.driver, 30).until(ec.presence_of_element_located((By.ID, self.profile)))
+            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.mailing_address)))
+            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.education)))
+            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.employment)))
+            print("User profile page is completely loaded")
         except TimeoutException:
             print("element not ready")
 

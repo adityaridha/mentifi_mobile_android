@@ -9,13 +9,13 @@ import pytest
 class Dashboard():
 
 
-    notif = "au.geekseat.com.hub3candroid:id/notification_counter"
-    connected = "au.geekseat.com.hub3candroid:id/textLinkConnected"
-    pending = "au.geekseat.com.hub3candroid:id/textLinkPending"
-    request = "au.geekseat.com.hub3candroid:id/textLinkRequests"
-    invite_business = "au.geekseat.com.hub3candroid:id/textLinkInviteBusiness"
-    members = "au.geekseat.com.hub3candroid:id/textLinkMembers"
-    invite_member = "au.geekseat.com.hub3candroid:id/textLinkInviteMembers"
+    connected = "com.hub.mentifi:id/textConnectedBusinessesStat"
+    pending = "com.hub.mentifi:id/textPendingBusinessStat"
+    home = "com.hub.mentifi:id/tab_home"
+    profile = "com.hub.mentifi:id/tab_profile"
+    network = "com.hub.mentifi:id/tab_network"
+    bulletin = "com.hub.mentifi:id/tab_assignment"
+    message = "com.hub.mentifi:id/tab_message"
 
     def __init__(self, driver):
         self.driver = driver
@@ -24,29 +24,8 @@ class Dashboard():
         try:
             WebDriverWait(self.driver, 30).until(ec.presence_of_element_located((By.ID, self.connected)))
             WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.pending)))
-            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.request)))
-            print("Dadshboard page is compleately loaded")
+            print("Dashboard page is completely loaded")
         except TimeoutException:
             print("element not ready")
 
-    def tap_notifications(self):
-        pass
-
-    def tap_connected_business(self):
-        self.driver.find_element_by_id(self.connected).click()
-
-    def tap_pending_invitations(self):
-        pass
-
-    def tap_connect_request(self):
-        pass
-
-    def tap_invite_more_business(self):
-        pass
-
-    def tap_members(self):
-        pass
-
-    def tap_invite_team_members(self):
-        pass
 
