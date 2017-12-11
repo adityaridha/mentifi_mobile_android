@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from appium import webdriver
-from util import  utility
+from util import utility
 
 
 
@@ -11,8 +11,8 @@ desired_caps = {}
 desired_caps['platformName'] = 'Android'
 desired_caps['platformVersion'] = '5.0'
 desired_caps['deviceName'] = '192.168.29.101:5555'
-desired_caps['udid'] = '192.168.29.101:5555'
-desired_caps['appPackage'] = "au.geekseat.com.hub3candroid'"
+desired_caps['udid'] = '420006e8ec161300'
+desired_caps['appPackage'] = "com.hub.mentifi'"
 desired_caps['appActivity'] = ".activities.SplashActivity'"
 desired_caps['noReset'] = False
 desired_caps['automationName'] = 'uiautomator2'
@@ -25,20 +25,22 @@ util = utility.Helper(driver)
 #Lenovo : SWEESK8PG6CETSJ7
 #Samsung : a986ce96
 
-WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/textUsername')))
-driver.find_element_by_id('au.geekseat.com.hub3candroid:id/textUsername').send_keys("marsha@freehub.com")
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/textPassword').send_keys("ZXasqw12")
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/buttonLogin').click()
-# WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/tab_profile')))
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/tab_profile').click()
+WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'com.hub.mentifi:id/input_email')))
+driver.find_element_by_id('com.hub.mentifi:id/input_email').send_keys("transuniversity@mailinator.com")
+driver.find_element_by_id('com.hub.mentifi:id/input_password').send_keys("ZXasqw12")
+driver.find_element_by_id('com.hub.mentifi:id/btn_login').click()
+
+WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'com.hub.mentifi:id/action_profile')))
+# driver.find_element_by_id('com.hub.mentifi:id/action_profile').click()
+
 # WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/containerSideNavHeader')))
 # driver.find_element_by_id('au.geekseat.com.hub3candroid:id/containerSideNavHeader').click()
 # driver.find_element_by_id('au.geekseat.com.hub3candroid:id/buttonLogout').click()
-#
-#
+
+
 # name = driver.find_element_by_id(yes)
 try:
-    elem = driver.find_element_by_xpath('//*[@resource-id="au.geekseat.com.hub3candroid:id/textUsername"]')
+    elem = driver.find_element_by_xpath('//*[@resource-id="com.hub.mentifi:id/input_email"]')
     elem.send_keys("XPATH SATU")
 except NoSuchElementException:
     print("failed 1")

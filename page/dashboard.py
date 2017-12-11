@@ -26,6 +26,6 @@ class Dashboard():
             WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.ID, self.pending)))
             print("Dashboard page is completely loaded")
         except TimeoutException:
-            print("element not ready")
+            print("Element not ready")
 
 
