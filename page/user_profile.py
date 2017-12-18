@@ -8,10 +8,10 @@ import pytest
 
 class UserProfile():
 
-    profile = "//*[@class='android.support.v7.app.ActionBar$Tab']"
-    mailing_address = "//*[@class='android.support.v7.app.ActionBar$Tab']"
-    education = "//*[@class='android.support.v7.app.ActionBar$Tab']"
-    employment = "//*[@class='android.support.v7.app.ActionBar$Tab']"
+    profile = ""
+    mailing_address = ""
+    education = ""
+    employment = ""
     logout = ""
 
     def __init__(self, driver):

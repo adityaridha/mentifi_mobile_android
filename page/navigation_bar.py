@@ -7,13 +7,11 @@ import time
 
 
 class Navbar():
-
-
-    dashboard = "au.geekseat.com.hub3candroid:id/tab_dashboard"
-    business_profile = "au.geekseat.com.hub3candroid:id/tab_business"
-    team_member = "au.geekseat.com.hub3candroid:id/tab_member"
-    business_network = "au.geekseat.com.hub3candroid:id/tab_business_network"
-    features = "au.geekseat.com.hub3candroid:id/tab_profile"
+    home = "com.hub.mentifi:id/tab_home"
+    profile = "com.hub.mentifi:id/tab_profile"
+    network = "com.hub.mentifi:id/tab_network"
+    bulletin = "com.hub.mentifi:id/tab_assignment"
+    message = "com.hub.mentifi:id/tab_message"
 
     def __init__(self, driver):
         self.driver = driver
@@ -27,6 +25,6 @@ class Navbar():
     def tap_business_connections(self):
         pass
 
-    def tap_feature_menu(self):
+    def tap_profile_menu(self):
         time.sleep(1)
-        self.driver.find_element_by_id(self.features).click()
+        self.driver.find_element_by_id(self.profile).click()

@@ -7,4 +7,3 @@ from page.projects_module.project_detail import *
 from page.projects_module.create_new_project_form import *
 from page.projects_module.project_list import *
 from page.projects_module.edit_project import *
-from page.switch_account import *
