@@ -9,8 +9,8 @@ import pytest
 class ForgotPassword():
 
 
-    email = "au.geekseat.com.hub3candroid:id/editEmail"
-    reset_btn = "au.geekseat.com.hub3candroid:id/buttonReset"
+    email = "com.hub.mentifi:id/input_email"
+    reset_btn = "com.hub.mentifi:id/btn_forgot"
 
 
     def __init__(self, driver):
@@ -18,6 +18,4 @@ class ForgotPassword():
 
     def input_email(self):
         self.driver.find_element_by_id(self.email).send_keys("tony.stark@mailinator.com")
-
-    def tap_get_reset_link(self):
 
