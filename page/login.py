@@ -12,7 +12,7 @@ class Login():
     username_id = 'com.hub.mentifi:id/input_email'
     password_id = 'com.hub.mentifi:id/input_password'
     sign_in_button = 'com.hub.mentifi:id/btn_login'
-    register_forgot_password = "com.hub.mentifi:id/text_forgot"
+    forgot_password = "com.hub.mentifi:id/text_forgot"
 
 
     def __init__(self, driver):
@@ -46,7 +46,7 @@ class Login():
 
     def input_password(self, password):
         try:
-            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.ID, self.register_forgot_password)))
+            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.ID, self.forgot_password)))
         except TimeoutException:
             print("element not ready")
         password_el = self.driver.find_element_by_id(self.password_id)
@@ -57,20 +57,6 @@ class Login():
 
     def is_login_success(self):
         pass
-
-    def tap_registration(self):
-        try:
-            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.ID, self.register_forgot_password)))
-        except TimeoutException:
-            print("element not ready")
-
-        register =  self.driver.find_element_by_id(self.register_forgot_password)
-        x = register.location['x']
-        y = register.location['y']
-        positions = []
-        positions.append((x + 10, y))
-        positions.append((x + 20, y))
-        self.driver.tap(positions)
 
     def tap_forgot_password(self):
         try:

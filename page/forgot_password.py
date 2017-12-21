@@ -17,5 +17,5 @@ class ForgotPassword():
         self.driver = driver
 
     def input_email(self):
-        self.driver.find_element_by_id(self.email).send_keys("tony.stark@mailinator.com")
+        self.driver.find_element_by_id(self.email).send_keys("transuniversity@mailinator.com")
 

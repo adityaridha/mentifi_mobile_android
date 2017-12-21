@@ -16,13 +16,16 @@ class Navbar():
     def __init__(self, driver):
         self.driver = driver
 
-    def tap_dashboard(self):
+    def tap_home(self):
         pass
 
-    def tap_team_members(self):
+    def tap_bulletin(self):
         pass
 
-    def tap_business_connections(self):
+    def tap_network(self):
+        pass
+
+    def tap_message(self):
         pass
 
     def tap_profile_menu(self):

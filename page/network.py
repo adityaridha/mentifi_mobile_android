@@ -7,6 +7,9 @@ import pytest
 
 class Network():
 
+    network_connected_tab = "//*[@text='Connected']"
+    network_pending_tab = "//*[@text='Pending']"
+    network_request_tab = "//*[@text='Request']"
     network_photo = "com.hub.mentifi:id/thumb"
     network_name = ""
     network_job_title = ""

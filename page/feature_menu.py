@@ -6,13 +6,12 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 class Feature():
 
-    business = "//*[@text='Business network']"
-    job2job = "au.geekseat.com.hub3candroid:id/sideNavJob2job"
-    project = "//*[@text='Projects']"
-    profile_picture = "au.geekseat.com.hub3candroid:id/imageProfile"
-    header = "au.geekseat.com.hub3candroid:id/containerSideNavHeader"
-    arrow_nav = "(//*[@id='sideNavHeader']/*[@class='android.widget.ImageView'])[2]"
-    cancel = "au.geekseat.com.hub3candroid:id/edit_cancel"
+    network = ""
+    project = ""
+    profile_picture = ""
+    header = ""
+    arrow_nav = ""
+    cancel = ""
 
     def __init__(self, driver):
         self.driver = driver
