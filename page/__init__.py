@@ -7,7 +7,4 @@ from page.forgot_password import *
 from page.bulletin import *
 from page.message import *
 from page.network import *
-from page.projects_module.project_detail import *
-from page.projects_module.create_new_project_form import *
-from page.projects_module.project_list import *
-from page.projects_module.edit_project import *
+from page.base_page import *
