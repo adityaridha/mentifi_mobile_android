@@ -27,14 +27,14 @@ util = utility.Helper(driver)
 
 WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/textUsername')))
 driver.find_element_by_id('au.geekseat.com.hub3candroid:id/textUsername').send_keys("marsha@freehub.com")
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/textPassword').send_keys("ZXasqw12")
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/buttonLogin').click()
-# WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/tab_profile')))
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/tab_profile').click()
-# WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/containerSideNavHeader')))
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/containerSideNavHeader').click()
-# driver.find_element_by_id('au.geekseat.com.hub3candroid:id/buttonLogout').click()
-#
+driver.find_element_by_id('au.geekseat.com.hub3candroid:id/textPassword').send_keys("ZXasqw12")
+driver.find_element_by_id('au.geekseat.com.hub3candroid:id/buttonLogin').click()
+WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/tab_profile')))
+driver.find_element_by_id('au.geekseat.com.hub3candroid:id/tab_profile').click()
+WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'au.geekseat.com.hub3candroid:id/containerSideNavHeader')))
+driver.find_element_by_id('au.geekseat.com.hub3candroid:id/containerSideNavHeader').click()
+driver.find_element_by_id('au.geekseat.com.hub3candroid:id/buttonLogout').click()
+
 #
 # name = driver.find_element_by_id(yes)
 try:
