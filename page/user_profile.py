@@ -4,39 +4,53 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from appium import webdriver
 import pytest
+from page.base_page import Page
 
 
-class UserProfile():
+class UserProfile(Page):
 
     '''user basic info'''
-    user_image = "com.hub.mentifi:id/image_profile"
-    user_name = "com.hub.mentifi:id/text_profile_name"
-    user_sex = "com.hub.mentifi:id/text_profile_sex"
-    user_university = "com.hub.mentifi:id/text_profile_id"
-    user_count = "com.hub.mentifi:id/text_profile_count"
-    user_email_address = "com.hub.mentifi:id/text_profile_email"
-    user_personal_number = "com.hub.mentifi:id/text_profile_phone"
-    user_work_number = "com.hub.mentifi:id/text_profile_phone_work"
+    user_image = (By.ID, "com.hub.mentifi:id/image_profile")
+    user_name = (By.ID, "com.hub.mentifi:id/text_profile_name")
+    user_sex = (By.ID, "com.hub.mentifi:id/text_profile_sex")
+    user_university = (By.ID, "com.hub.mentifi:id/text_profile_id")
+    user_mentee_mentor_count = (By.ID, "com.hub.mentifi:id/text_profile_count")
+    user_email_address = (By.ID, "com.hub.mentifi:id/text_profile_email")
+    user_personal_number = (By.ID, "com.hub.mentifi:id/text_profile_phone")
+    user_work_number = (By.ID, "com.hub.mentifi:id/text_profile_phone_work")
 
     '''user extended info'''
-    profile_tab = "//*[@bounds='[31,499][112,537]']"
-    mailing_address_tab = "//*[@text='Mailing Address']"
-    education_tab = "//*[@text='Education']"
-    employment_tab = "//*[@text='Employment']"
+    profile_tab = (By.XPATH, "//*[@bounds='[31,499][112,537]']")
+    mailing_address_tab = (By.XPATH, "//*[@text='Mailing Address']")
+    education_tab = (By.XPATH, "//*[@text='Education']")
+    employment_tab = (By.XPATH, "//*[@text='Employment']")
     logout = ""
 
     def __init__(self, driver):
         self.driver = driver
+        super().__init__()
 
     def verified_all_element(self):
         try:
-            WebDriverWait(self.driver, 30).until(ec.presence_of_element_located((By.XPATH, self.profile)))
-            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.XPATH, self.mailing_address)))
-            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.XPATH, self.education)))
-            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.XPATH, self.employment)))
+            WebDriverWait(self.driver, 30).until(ec.presence_of_element_located(self.profile_tab))
+            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.mailing_address_tab))
+            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.education_tab))
+            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.employment_tab))
             print("User profile page is completely loaded")
         except TimeoutException:
             print("element not ready")
 
+    def tap_profile_tab(self):
+        self.find_element(self.profile_tab).click()
+
+    def tap_mailing_address_tab(self):
+        self.find_element(self.mailing_address_tab).click()
+
+    def tap_education_tab(self):
+        self.find_element(self.education_tab).click()
+
+    def tap_employment_tab(self):
+        self.find_element(self.employment_tab).click()
+
     def tap_logout(self):
-        self.driver.find_element_by_id(self.logout).click()
+        self.find_element(self.logout).click()

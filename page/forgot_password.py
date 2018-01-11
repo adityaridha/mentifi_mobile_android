@@ -9,23 +9,24 @@ import pytest
 class ForgotPassword():
 
 
-    email = "com.hub.mentifi:id/input_email"
-    reset_btn = "com.hub.mentifi:id/btn_forgot"
+    email = (By.ID, "com.hub.mentifi:id/input_email")
+    reset_btn = (By.ID, "com.hub.mentifi:id/btn_forgot")
 
 
     def __init__(self, driver):
         self.driver = driver
+        super().__init__()
 
     def input_email(self):
         try:
-            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.ID, self.email)))
+            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located(self.email))
         except TimeoutException:
             print("failed go to forget password")
 
-        self.driver.find_element_by_id(self.email).send_keys("tony.stark@mailinator.com")
+        self.driver.find_element(self.email).send_keys("tony.stark@mailinator.com")
 
     def tap_get_reset_link(self):
-        self.driver.find_element_by_id(self.reset_btn).click()
-        self.driver.find_element_by_id(self.email).send_keys("transuniversity@mailinator.com")
+        self.driver.find_element(self.reset_btn).click()
+        self.driver.find_element(self.email).send_keys("transuniversity@mailinator.com")
 
 
