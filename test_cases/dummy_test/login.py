@@ -9,11 +9,11 @@ from util import utility
 
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
-desired_caps['platformVersion'] = '5.0'
-desired_caps['deviceName'] = '192.168.29.101:5555'
-desired_caps['udid'] = '420006e8ec161300'
+desired_caps['platformVersion'] = '6.0.1'
+desired_caps['deviceName'] = 'Xiaomi Redmi 3S'
+desired_caps['udid'] = '66feaa977d33'
 desired_caps['appPackage'] = "com.hub.mentifi'"
-desired_caps['appActivity'] = ".activities.SplashActivity'"
+desired_caps['appActivity'] = "com.hub.mentifi.ui.dashboard.DashboardActivity'"
 desired_caps['noReset'] = False
 desired_caps['automationName'] = 'uiautomator2'
 
