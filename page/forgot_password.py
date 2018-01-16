@@ -4,9 +4,10 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from appium import webdriver
 import pytest
+from page.base_page import Page
 
 
-class ForgotPassword():
+class ForgotPassword(Page):
 
 
     email = (By.ID, "com.hub.mentifi:id/input_email")
@@ -23,10 +24,10 @@ class ForgotPassword():
         except TimeoutException:
             print("failed go to forget password")
 
-        self.driver.find_element(self.email).send_keys("tony.stark@mailinator.com")
+        self.find_element(self.email).send_keys("tony.stark@mailinator.com")
 
     def tap_get_reset_link(self):
-        self.driver.find_element(self.reset_btn).click()
-        self.driver.find_element(self.email).send_keys("transuniversity@mailinator.com")
+        self.find_element(self.reset_btn).click()
+        self.find_element(self.email).send_keys("transuniversity@mailinator.com")
 
 
