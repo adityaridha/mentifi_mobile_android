@@ -19,7 +19,6 @@ dashboard = page.Dashboard(driver)
 navbar = page.Navbar(driver)
 feature_menu = page.Feature(driver)
 user_profile = page.UserProfile(driver)
-switch_account = page.SwitchAccount(driver)
 
 
 @pytest.mark.usefixtures("reset_app")

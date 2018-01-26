@@ -4,16 +4,18 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from appium import webdriver
 import time
+from page.base_page import Page
 
 
-class Navbar():
-    home = "com.hub.mentifi:id/tab_home"
-    profile = "com.hub.mentifi:id/tab_profile"
-    network = "com.hub.mentifi:id/tab_network"
-    bulletin = "com.hub.mentifi:id/tab_assignment"
-    message = "com.hub.mentifi:id/tab_message"
+class Navbar(Page):
+    home = (By.ID, "com.hub.mentifi:id/tab_home")
+    profile = (By.ID, "com.hub.mentifi:id/tab_profile")
+    network = (By.ID, "com.hub.mentifi:id/tab_network")
+    bulletin = (By.ID, "com.hub.mentifi:id/tab_assignment")
+    message = (By.ID, "com.hub.mentifi:id/tab_message")
 
     def __init__(self, driver):
+        super().__init__()
         self.driver = driver
 
     def tap_home(self):
@@ -30,4 +32,4 @@ class Navbar():
 
     def tap_profile_menu(self):
         time.sleep(1)
-        self.driver.find_element_by_id(self.profile).click()
+        self.find_element(self.profile).click()

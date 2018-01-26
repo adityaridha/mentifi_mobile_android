@@ -1,19 +1,7 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
-from appium import webdriver
-import pytest
-
-class Network():
-
-    network_connected_tab = "//*[@text='Connected']"
-    network_pending_tab = "//*[@text='Pending']"
-    network_request_tab = "//*[@text='Request']"
-    network_photo = "com.hub.mentifi:id/thumb"
-    network_name = ""
-    network_job_title = ""
-    network_more_button = "com.hub.mentifi:id/ib_action_more"
-
-
-
+''' business network '''
+add business network = add team member = au.geekseat.com.hub3candroid:id/fab
+action more = au.geekseat.com.hub3candroid:id/ib_action_more
+business profile pict = au.geekseat.com.hub3candroid:id/thumbnail
+search business = au.geekseat.com.hub3candroid:id/action_search
+pending = au.geekseat.com.hub3candroid:id/buttonPending
+request = au.geekseat.com.hub3candroid:id/buttonRequest

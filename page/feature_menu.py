@@ -2,45 +2,42 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from page import Page
 
+class Feature(Page):
 
-class Feature():
-
-    network = ""
-    project = ""
-    profile_picture = ""
-    header = ""
-    arrow_nav = ""
-    cancel = ""
+    network = (By.ID, "")
+    project = (By.ID, "")
+    profile_picture = (By.ID, "")
+    header = (By.ID, "")
+    arrow_nav = (By.ID, "")
+    cancel = (By.ID, "")
 
     def __init__(self, driver):
         self.driver = driver
+        super().__init__()
 
-    def tap_business_network(self):
+    def tap_network(self):
         pass
 
-    def tap_projects(self):
+    def tap_project(self):
         try:
-            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.XPATH, self.project)))
-            self.driver.find_element_by_xpath(self.project).click()
+            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located(self.project))
+            self.find_element(self.project).click()
         except TimeoutException:
             print("Project module not found")
 
-    def tap_job2job(self):
-        pass
-
     def tap_header(self):
-
         try:
-            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((By.ID, self.profile_picture)))
-            self.driver.find_element_by_id(self.profile_picture).click()
+            WebDriverWait(self.driver, 10).until(ec.presence_of_element_located(self.profile_picture))
+            self.find_element(self.profile_picture).click()
         except TimeoutException:
             print("element not ready")
 
     def tap_arrow_nav(self):
         pass
 
-    def tap_cencel(self):
+    def tap_cancel(self):
         pass
 
 
