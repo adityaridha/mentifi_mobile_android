@@ -12,11 +12,26 @@ class Dashboard(Page):
     connected = (By.ID, "com.hub.mentifi:id/textConnectedBusinessesStat")
     pending = (By.ID, "com.hub.mentifi:id/textPendingBusinessStat")
     home = (By.ID, "com.hub.mentifi:id/tab_home")
-    profile = (By.ID, "com.hub.mentifi:id/tab_profile")
-    network = (By.ID, "com.hub.mentifi:id/tab_network")
-    bulletin = (By.ID, "com.hub.mentifi:id/tab_assignment")
-    message = (By.ID, "com.hub.mentifi:id/tab_message")
-    notifications = (By.ID, "")
+    goals = (By.ID, "com.hub.mentifi:id/tab_goals")
+    tasks = (By.ID, "com.hub.mentifi:id/tab_tasks")
+    connection = (By.ID, "com.hub.mentifi:id/tab_network")
+
+    wh_profile_picture = (By.ID, "com.hub.mentifi:id/thumb")
+    wh_date = (By.ID, "com.hub.mentifi:id/date")
+    wh_content = (By.ID, "com.hub.mentifi:id/content")
+    more_button = (By.ID, "com.hub.mentifi:id/tab_profile")
+
+
+    '''MORE MENU'''
+    profile_picture = (By.ID, "com.hub.mentifi:id/thumb")
+    profile_name = (By.ID, "com.hub.mentifi:id/text_profile_name")
+    profile_university = (By.ID, "com.hub.mentifi:id/text_profile_university")
+    profile_navigation = (By.ID, "com.hub.mentifi:id/nav_profile")
+    search = (By.ID, "com.hub.mentifi:id/nav_search")
+    projects = (By.ID, "com.hub.mentifi:id/nav_project")
+    bulletin = (By.ID, "com.hub.mentifi:id/nav_bulletin")
+    message = (By.ID, "com.hub.mentifi:id/nav_message")
+    cancel_button = (By.ID, "com.hub.mentifi:id/btn_cancel")
 
     def __init__(self, driver):
         self.driver = driver
@@ -39,14 +54,9 @@ class Dashboard(Page):
     def tap_home(self):
         self.find_element(self.home).click()
 
-    def tap_profile(self):
-        self.find_element(self.profile).click()
 
     def tap_network(self):
-        self.find_element(self.network).click()
+        self.find_element(self.connection).click()
 
     def tap_bulletin(self):
         self.find_element(self.bulletin).click()
-
-    def tap_notifications(self):
-        self.find_element(self.notifications).click()

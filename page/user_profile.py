@@ -19,12 +19,25 @@ class UserProfile(Page):
     user_personal_number = (By.ID, "com.hub.mentifi:id/text_profile_phone")
     user_work_number = (By.ID, "com.hub.mentifi:id/text_profile_phone_work")
 
-    '''user extended info'''
-    profile_tab = (By.XPATH, "//*[@bounds='[31,499][112,537]']")
-    mailing_address_tab = (By.XPATH, "//*[@text='Mailing Address']")
-    education_tab = (By.XPATH, "//*[@text='Education']")
-    employment_tab = (By.XPATH, "//*[@text='Employment']")
-    logout = ""
+    '''mentor extended info'''
+    profile_tab = (By.XPATH, "//*[@bounds='[0,431][144,527]']")
+    mailing_address_tab = (By.XPATH, "//*[@bounds='[144,431][356,527]']")
+    education_tab = (By.XPATH, "//*[@bounds='[356,431][527,527]']")
+    experience_tab = (By.XPATH, "//*[@bounds='[527,431][706,527]']")
+    preferences_tab = (By.XPATH, "//*[@text='Preferences']")
+
+    '''tab address'''
+
+    address = (By.ID, "com.hub.mentifi:id/text_address")
+    (By.ID, "")
+
+    '''mentee extended info'''
+
+
+
+
+
+    logout = (By.ID, "com.hub.mentifi:id/title")
 
     def __init__(self, driver):
         self.driver = driver
@@ -35,7 +48,7 @@ class UserProfile(Page):
             WebDriverWait(self.driver, 30).until(ec.presence_of_element_located(self.profile_tab))
             WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.mailing_address_tab))
             WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.education_tab))
-            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.employment_tab))
+            WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.experience_tab))
             print("User profile page is completely loaded")
         except TimeoutException:
             print("element not ready")
@@ -50,7 +63,7 @@ class UserProfile(Page):
         self.find_element(self.education_tab).click()
 
     def tap_employment_tab(self):
-        self.find_element(self.employment_tab).click()
+        self.find_element(self.experience_tab).click()
 
     def tap_logout(self):
         self.find_element(self.logout).click()
