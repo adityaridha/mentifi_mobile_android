@@ -51,7 +51,7 @@ class UserProfile(Page):
             WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(self.experience_tab))
             print("User profile page is completely loaded")
         except TimeoutException:
-            print("element not ready")
+            print("User profile page is not ready")
 
     def tap_profile_tab(self):
         self.find_element(self.profile_tab).click()
