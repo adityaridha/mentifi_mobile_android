@@ -9,12 +9,13 @@ from page.base_page import Page
 
 class Goals(Page):
     page_title = (By.XPATH, "//*[@text='Goals']")
-    goal_name = (By.ID, "")
-    goal_status = (By.ID, "")
-    goal_status_icon = (By.ID, "c")
-    goal_profile_picture = (By.ID, "")
-    goal_more_button = (By.ID, "")
-    add_goal_button = (By.ID, "")
+    search_goals = (By.ID, "android:id/search_src_text")
+    goal_title = (By.ID, "com.hub.mentifi:id/GoalTitle")
+    goal_progress = (By.ID, "com.hub.mentifi:id/determinateBar")
+    goal_text = (By.ID, "com.hub.mentifi:id/graphicsText")
+    goal_more_button = (By.ID, "com.hub.mentifi:id/ib_action_more")
+    add_goal_button = (By.ID, "com.hub.mentifi:id/fab_new_goal")
+    goal_chart = (By.ID, "com.hub.mentifi:id/ib_action_more")
 
     def __init__(self, driver):
         self.driver = driver
@@ -26,3 +27,12 @@ class Goals(Page):
             print("Goals page is completely loaded")
         except TimeoutException:
             print("Goals page is not ready")
+
+    def tap_goal_title(self):
+        self.find_element(self.goal_title).click()
+
+    def tap_more_button(self):
+        self.find_element(self.goal_more_button).click()
+
+    def tap_add_goal_button(self):
+        self.find_element(self.add_goal_button).click()
