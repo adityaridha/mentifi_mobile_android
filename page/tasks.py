@@ -9,6 +9,13 @@ from page.base_page import Page
 
 class Tasks(Page):
     page_title = (By.XPATH, "//*[@text='Tasks']")
+
+    '''Mentor/Mentee List'''
+    search = (By.ID, "android:id/search_src_text")
+    mentor_mentee_name = (By.ID, "")
+    mentor_mentee_profile_picture = (By.ID, "")
+
+    '''Tasks List'''
     task_name = (By.ID, "com.hub.mentifi:id/task_name")
     task_date = (By.ID, "com.hub.mentifi:id/task_date")
     task_status = (By.ID, "com.hub.mentifi:id/task_status")
