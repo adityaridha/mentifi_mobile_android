@@ -16,12 +16,13 @@ class Goals(Page):
     goal_more_button = (By.ID, "com.hub.mentifi:id/ib_action_more")
     add_goal_button = (By.ID, "com.hub.mentifi:id/fab_new_goal")
     goal_chart = (By.ID, "com.hub.mentifi:id/ib_action_more")
+    remove_goal = (By.XPATH, "//*[@bounds='[328,454][720,550]']")
 
     def __init__(self, driver):
         self.driver = driver
         super().__init__()
 
-    def verified_all_element(self):
+    def verify_element(self):
         try:
             WebDriverWait(self.driver, 30).until(ec.presence_of_element_located(self.page_title))
             print("Goals page is completely loaded")
@@ -36,3 +37,7 @@ class Goals(Page):
 
     def tap_add_goal_button(self):
         self.find_element(self.add_goal_button).click()
+
+    def tap_remove_goal_button(self):
+        self.find_element(self.goal_more_button).click()
+        self.find_element(self.remove_goal).click()
