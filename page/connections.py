@@ -17,6 +17,11 @@ class Network(Page):
     network_user_jobtitle = (By.ID, "com.hub.mentifi:id/text_position")
     more_button = (By.ID, "com.hub.mentifi:id/ib_action_more")
 
+    remove_connection_button = (By.XPATH, "//*[@text='Remove connection']")
+    view_profile_button = (By.XPATH, "//*[@text='View profile']")
+    view_message_board_button = (By.XPATH, "//*[@text='View message board']")
+    accept_button = (By.XPATH, "//*[@text='Accept request']")
+    reject_button = (By.XPATH, "//*[@text='Reject request']")
 
     def __init__(self, driver):
         self.driver = driver
@@ -45,3 +50,18 @@ class Network(Page):
 
     def tap_more_button(self):
         self.find_element(self.more_button).click()
+
+    def tap_remove_button(self):
+        self.find_element(self.remove_connection_button).click()
+
+    def tap_view_profile_button(self):
+        self.find_element(self.view_profile_button).click()
+
+    def tap_view_message_board_button(self):
+        self.find_element(self.view_message_board_button).click()
+
+    def tap_accept_button(self):
+        self.find_element(self.accept_button).click()
+
+    def tap_reject_button(self):
+        self.find_element(self.reject_button).click()

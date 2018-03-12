@@ -7,13 +7,18 @@ from util import utility
 
 class Message(Page):
 
-    message_inbox = (By.ID, "")
-    message_sent = (By.ID, "")
+    message_inbox = (By.XPATH, "//*[@text='Inbox']")
+    message_sent = (By.XPATH, "//*[@class='android.support.v7.app.ActionBar$Tab' and ./*[@text='Sent']]")
     message_profile_picture = (By.ID, "com.hub.mentifi:id/thumb")
-    message_title = (By.ID, "")
-    message_timestamp = (By.ID, "")
+    message_sender = (By.ID, "com.hub.mentifi:id/message_sender_name")
+    message_title = (By.ID, "com.hub.mentifi:id/message_subject")
+    message_timestamp = (By.ID, "com.hub.mentifi:id/message_date")
     message_more_button = (By.ID, "com.hub.mentifi:id/ib_action_more")
     message_info = (By.ID, "com.hub.mentifi:id/layout_info")
+
+    reply_message = (By.XPATH, "//*[@text='Reply Message']")
+    forward_message = (By.XPATH, "//*[@text='Forward Message']")
+    delete_message = (By.XPATH, "//*[@text='Delete Message']")
 
     def __init__(self, driver):
         super().__init__()
@@ -33,3 +38,18 @@ class Message(Page):
 
     def tap_message_sent(self):
         self.find_element(self.message_sent).click()
+
+    def tap_message_title(self):
+        self.find_element(self.message_title).click()
+
+    def tap_more_button(self):
+        self.find_element(self.message_more_button).click()
+
+    def tap_reply_button(self):
+        self.find_element(self.reply_message).click()
+
+    def tap_forward_button(self):
+        self.find_element(self.forward_message).click()
+
+    def tap_delete_button(self):
+        self.find_element(self.delete_message).click()
