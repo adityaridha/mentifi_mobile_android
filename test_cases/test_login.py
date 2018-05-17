@@ -24,14 +24,21 @@ user_profile = page.UserProfile(driver)
 @pytest.mark.usefixtures("reset_app")
 class TestLogin():
 
-    # def test_login_wrong_password(self):
-    #     driver.launch_app()
-    #     login.input_email("transsystem@mailinator.com")
-    #     login.input_password("this is password")
-    #     login.tap_sign_in()
-    #     time.sleep(2)
-    #     driver.save_screenshot(directory+"wrong_password.png")
-    #
+    def test_valid_login(self):
+        login.verified_all_element()
+        login.input_email("transsystem@mailinator.com")
+        login.input_password("ZXasqw12")
+        login.tap_sign_in()
+        driver.save_screenshot(directory+"succesful_login.png")
+
+    def test_login_wrong_password(self):
+        driver.launch_app()
+        login.input_email("transsystem@mailinator.com")
+        login.input_password("this is password")
+        login.tap_sign_in()
+        time.sleep(2)
+        driver.save_screenshot(directory+"wrong_password.png")
+
     # def test_login_failed3x(self):
     #     driver.launch_app()
     #     login.input_email("transsystem@mailinator.com")
